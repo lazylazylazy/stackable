@@ -6,11 +6,11 @@ require 'stackable/version'
 Gem::Specification.new do |spec|
   spec.name          = "stackable"
   spec.version       = Stackable::VERSION
-  spec.authors       = ["Michael"]
-  spec.email         = ["michaelnicholasfisher@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.authors       = ["Michael", "Erica", "Kumi"]
+  spec.email         = ["michaelnicholasfisher@gmail.com", "erica.salvaneschi@gmail.com"]
+  spec.summary       = %q{Ruby toolkit for working with the unofficial Stack Overflow Careers API}
+  spec.description   = %q{Simple Ruby wrapper for the unofficial Stack Overflow Careers API}
+  spec.homepage      = "https://github.com/mfisher90/stackable"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

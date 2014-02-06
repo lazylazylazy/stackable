@@ -1,4 +1,11 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in stackable.gemspec
+gem 'rake'
+
+group :test, :development do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'webmock'
+end
+
 gemspec
