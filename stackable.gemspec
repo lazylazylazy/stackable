@@ -5,7 +5,7 @@ require 'stackable/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "stackable"
-  spec.version       = Stackable::VERSION
+  spec.version       = StackableV::VERSION
   spec.authors       = ["Michael", "Erica", "Kumi"]
   spec.email         = ["michaelnicholasfisher@gmail.com", "erica.salvaneschi@gmail.com"]
   spec.summary       = %q{Ruby toolkit for working with the unofficial Stack Overflow Careers API}
@@ -18,6 +18,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.3.5"
+  spec.add_development_dependency "bundler", "~> 1.5.1"
   spec.add_development_dependency "rake"
 end
