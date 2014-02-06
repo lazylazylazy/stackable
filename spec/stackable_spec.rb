@@ -13,14 +13,6 @@ describe "Stackable" do
   	stub.should have_been_requested
   end
 
-  it 'should return a list of company profiles' do
-  	stub = stub_request(:get, "http://localhost:9292/api/companies").to_return(body: IO.read('./spec/api_companies.json'))
-
-  	stackable.all_companies
-
-  	stub.should have_been_requested
-  end
-
   it 'should return a specific job when job_id is given' do
   	stub = stub_request(:get, "http://localhost:9292/api/jobs/46369").to_return(body: IO.read('./spec/api_jobs_46369.json'))
 
@@ -28,6 +20,58 @@ describe "Stackable" do
   	
   	stub.should have_been_requested
   end
+
+  it 'should return a list of jobs that offer relocation' do
+  	stub = stub_request(:get, "http://localhost:9292/api/relocation").to_return(body: IO.read('./spec/api_relocation.json'))
+
+  	stackable.relocation_offered?
+
+  	stub.should have_been_requested
+  end
+
+  it 'should return a list of jobs that allows remote working' do
+  	stub = stub_request(:get, "http://localhost:9292/api/remote").to_return(body: IO.read('./spec/api_remote.json'))
+
+  	stackable.remote_working?
+
+  	stub.should have_been_requested
+  end
+
+  it 'should return a list of jobs that are senior positions' do
+  	stub = stub_request(:get, "http://localhost:9292/api/senior").to_return(body: IO.read('./spec/api_senior.json'))
+
+  	stackable.senior
+
+  	stub.should have_been_requested
+  end
+
+  it 'should return a list of jobs filtered by a given tag' do
+  	stub = stub_request(:get, "http://localhost:9292/api/jobs/tags/java").to_return(body: IO.read('./spec/api_jobs_tags_java.json'))
+
+  	stackable.get_jobs_by_tag("java")
+  end
+
+  it 'should return a single company by given name' do
+  	stub = stub_request(:get, "http://localhost:9292/api/companies/app-business").to_return(body: IO.read('./spec/api_companies_app-business.json'))
+
+  	stackable.get_company("app-business")
+
+  	stub.should have_been_requested
+  end
+
+  it 'should return a list of companies filtered by a given tag' do
+  	stub = stub_request(:get, "http://localhost:9292/api/companies/tags/ruby").to_return(body: IO.read('./spec/api_companies_tags_ruby.json'))
+
+  	stackable.get_companies_by_tag("ruby")
+
+  	stub.should have_been_requested
+  end
+
+
+
+
+
+
 end
 
 
