@@ -48,8 +48,19 @@ describe "Stackable" do
   it 'should return a list of jobs filtered by a given tag' do
   	stub = stub_request(:get, "http://localhost:9292/api/jobs/tags/java").to_return(body: IO.read('./spec/api_jobs_tags_java.json'))
 
-  	stackable.get_jobs_by_tag("java")
+  	stackable.get_jobs_by_tags(["java"])
+
+    stub.should have_been_requested
   end
+
+  # it 'should return a list of jobs filtered by multiple tags' do
+  #   stub = stub_request(:get, "http://localhost:9292/api/jobs/tags/java&ruby").to_return(body: IO.read('./spec/api_jobs_tags_java_ruby.json'))
+
+  #   stackable.get_jobs_by_tags(["java", "ruby"])
+
+      # stub.should have_been_requested
+
+  # end
 
   it 'should return a single company by given name' do
   	stub = stub_request(:get, "http://localhost:9292/api/companies/app-business").to_return(body: IO.read('./spec/api_companies_app-business.json'))
@@ -62,13 +73,22 @@ describe "Stackable" do
   it 'should return a list of companies filtered by a given tag' do
   	stub = stub_request(:get, "http://localhost:9292/api/companies/tags/ruby").to_return(body: IO.read('./spec/api_companies_tags_ruby.json'))
 
-  	stackable.get_companies_by_tag("ruby")
+  	stackable.get_companies_by_tags(["ruby"])
 
   	stub.should have_been_requested
   end
 
+   # it 'should return a list of companies filtered by multiple tags' do
+  #   stub = stub_request(:get, "http://localhost:9292/api/companies/tags/java&ruby").to_return(body: IO.read('./spec/api_companies_tags_java_ruby.json'))
 
+  #   stackable.get_companies_by_tags(["java", "ruby"])
 
+      # stub.should have_been_requested
+
+  # end
+
+  it 'should return a list of companies filtered by keywords (benefits)' do
+  end
 
 
 

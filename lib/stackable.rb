@@ -5,7 +5,7 @@ require 'httparty'
 class Stackable
 
 
-	def get(url, options = {})
+	def get(url)
 		response = HTTParty.get(url)
 		JSON.parse(response.body)
 	end	
@@ -18,8 +18,9 @@ class Stackable
 		get("http://localhost:9292/api/jobs/#{job_id}")
 	end
 
-	def get_jobs_by_tag(tag)
-		get("http://localhost:9292/api/jobs/tags/#{tag}")
+	def get_jobs_by_tags(tags=[])
+		params = tags.join('&')
+		get("http://localhost:9292/api/jobs/tags/#{params}")
 	end
 
   def all_companies
@@ -30,8 +31,9 @@ class Stackable
 		get("http://localhost:9292/api/companies/#{company_id}")
 	end
 
-	def get_companies_by_tag(tag)
-		get("http://localhost:9292/api/companies/tags/#{tag}")
+	def get_companies_by_tags(tags=[])
+		params = tags.join('&')
+		get("http://localhost:9292/api/companies/tags/#{params}")
 	end
 
 	def relocation_offered?
@@ -46,11 +48,8 @@ class Stackable
 		get("http://localhost:9292/api/senior")
 	end
 
-
+	def companies_by_benefits
+ 	end
 
 
 end
-
-# puts Stackable.new.all_jobs
-# puts Stackable.new.get_job("46369")
-# puts Stackable.new.all_companies
