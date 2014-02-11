@@ -83,11 +83,24 @@ describe "Stackable" do
 
     stackable.get_companies_by_tags(["java", "ruby"])
 
-      stub.should have_been_requested
+    stub.should have_been_requested
 
   end
 
+  it 'should return a list of companies filtered by keyword (benefits)' do
+    stub = stub_request(:get, "http://localhost:9292/api/companies/tags/java&ruby").to_return(body: IO.read('./spec/api_companies_benefits_dental.json'))
+
+    stackable.companies_by_benefits(["dental"])
+
+    stub.should have_been_requested
+  end
+
   it 'should return a list of companies filtered by keywords (benefits)' do
+    stub = stub_request(:get, "http://localhost:9292/api/companies/tags/java&ruby").to_return(body: IO.read('./spec/api_companies_benefits_dental.json'))
+
+    stackable.companies_by_benefits(["dental", "childcare"])
+
+    stub.should have_been_requested
   end
 
 
