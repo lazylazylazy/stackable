@@ -2,6 +2,8 @@
 
 Stackable is a an Ruby API wrapper for the unoffical Stack Over Flow jobs API.
 
+IMPORTANT! Database is still work in progress. Please come back Friday 14th 2013!
+
 ## Installation
 
 Add this line to your application's Gemfile:
