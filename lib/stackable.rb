@@ -19,7 +19,7 @@ class Stackable
 
 	def get_jobs_by_tags(tags=[])
 		params = tags.join('&')
-		get("http://stackable.herokuapp.com//api/jobs/tags/#{params}")
+		get("http://stackable.herokuapp.com/api/jobs/tags/#{params}")
 	end
 
   def all_companies
@@ -54,7 +54,7 @@ class Stackable
 
  	def jobs_by_location(location)
 		params = location
-		get("http://stackable.herokuapp.com/api/jobs/locations/#{params}")
+		get("http://stackable.herokuapp.com/api/jobs/location/#{params}")
  	end
 
 
