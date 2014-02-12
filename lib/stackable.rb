@@ -1,4 +1,3 @@
-# require "./stackable/version"
 require 'json'
 require 'httparty'
 
@@ -51,6 +50,11 @@ class Stackable
 	def companies_by_benefits(benefits=[])
 		params = benefits.join('&')
 		get("http://stackable.herokuapp.com/api/companies/benefits/#{params}")
+ 	end
+
+ 	def jobs_by_location(location)
+		params = location
+		get("http://stackable.herokuapp.com/api/jobs/locations/#{params}")
  	end
 
 

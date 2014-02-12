@@ -5,7 +5,7 @@ require 'stackable/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "stackable"
-  spec.version       = StackableV::VERSION
+  spec.version       = "0.0.1"
   spec.authors       = ["Michael", "Erica", "Kumi"]
   spec.email         = ["michaelnicholasfisher@gmail.com", "erica.salvaneschi@gmail.com"]
   spec.summary       = %q{Ruby toolkit for working with the unofficial Stack Overflow Careers API}
