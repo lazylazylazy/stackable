@@ -4,6 +4,8 @@ Stackable is a an Ruby API wrapper for the <a href="https://github.com/Ericat/st
 
 Inspired by this<a href="http://meta.stackoverflow.com/questions/158005/stackoverflow-careers-api">post</a>.
 
+IMPORTANT! Database is still work in progress. Please come back Friday 14th 2013!
+
 ## Installation
 
 Add this line to your application's Gemfile:

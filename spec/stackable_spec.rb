@@ -96,9 +96,9 @@ describe "Stackable" do
   end
 
   it 'should return a list of companies filtered by keywords (benefits)' do
-    stub = stub_request(:get, "http://stackable.herokuapp.com/api/companies/benefits/dental&childcare").to_return(body: IO.read('./spec/api_companies_benefits_dental.json'))
+    stub = stub_request(:get, "http://stackable.herokuapp.com/api/companies/benefits/medical&Gym").to_return(body: IO.read('./spec/api_companies_benefits_medical_gym.json'))
 
-    stackable.companies_by_benefits(["dental", "childcare"])
+    stackable.companies_by_benefits(["medical", "Gym"])
 
     stub.should have_been_requested
   end
